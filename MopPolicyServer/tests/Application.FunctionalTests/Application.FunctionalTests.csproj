@@ -3,6 +3,7 @@
     <PropertyGroup>
         <RootNamespace>MopPolicyServer.Application.FunctionalTests</RootNamespace>
         <AssemblyName>MopPolicyServer.Application.FunctionalTests</AssemblyName>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
