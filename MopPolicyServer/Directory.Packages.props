@@ -5,31 +5,32 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Ardalis.GuardClauses" Version="4.2.0" />
-    <PackageVersion Include="AutoMapper" Version="10.1.1" />
     <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.0" />
     <PackageVersion Include="Azure.Identity" Version="1.10.4" />
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="FluentAssertions" Version="6.12.0" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
     <PackageVersion Include="MediatR" Version="12.1.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.SpaProxy" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageVersion Include="Moq" Version="4.20.69" />
     <PackageVersion Include="NSwag.AspNetCore" Version="14.0.0-preview009" />
-    <PackageVersion Include="NUnit" Version="3.14.0" />
+    <PackageVersion Include="NSwag.MSBuild" Version="14.0.0-preview009" />
+    <PackageVersion Include="nunit" Version="3.14.0" />
     <PackageVersion Include="NUnit.Analyzers" Version="3.9.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageVersion Include="Respawn" Version="6.1.0" />
@@ -38,51 +39,5 @@
     <PackageVersion Include="Microsoft.Playwright" Version="1.39.0" />
     <PackageVersion Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
     <PackageVersion Include="SpecFlow.NUnit" Version="3.9.74" />
-    <PackageVersion Include="Skoruba.AuditLogging.EntityFramework" Version="1.0.0" />
-    <PackageVersion Include="Skoruba.IdentityServer4.Admin.EntityFramework.Configuration" Version="2.1.0" />
-    <PackageVersion Include="AspNet.Security.OAuth.GitHub" Version="6.0.3" />
-    <PackageVersion Include="AspNetCore.HealthChecks.MySql" Version="6.0.1" />
-    <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.1" />
-    <PackageVersion Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.1" />
-    <PackageVersion Include="AspNetCore.HealthChecks.UI" Version="6.0.2" />
-    <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.1" />
-    <PackageVersion Include="IdentityServer4.AspNetIdentity" Version="4.1.2" />
-    <PackageVersion Include="IdentityServer4.EntityFramework" Version="4.1.2" />
-    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
-    <PackageVersion Include="AspNetCore.HealthChecks.OpenIdConnectServer" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
-    <PackageVersion Include="Skoruba.IdentityServer4.Admin.BusinessLogic" Version="2.1.0" />
-    <PackageVersion Include="Skoruba.IdentityServer4.Admin.BusinessLogic.Identity" Version="2.1.0" />
-    <PackageVersion Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
-    <PackageVersion Include="Skoruba.IdentityServer4.Admin.UI" Version="2.1.0" />
-    <PackageVersion Include="Azure.Extensions.AspNetCore.DataProtection.Keys" Version="1.1.0" />
-    <PackageVersion Include="Azure.Security.KeyVault.Certificates" Version="4.2.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.24" />
-    <PackageVersion Include="Sendgrid" Version="9.25.2" />
-    <PackageVersion Include="Microsoft.Identity.Web" Version="1.22.1" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.2" />
-    <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
-    <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
-    <PackageVersion Include="Serilog" Version="2.10.0" />
-    <PackageVersion Include="NSwag.MSBuild" Version="14.0.0-preview009" />
-    <PackageVersion Include="NSwag.AspNetCore" Version="14.0.0-preview009" />
-    <PackageVersion Include="Serilog.Enrichers.Environment" Version="2.2.0" />
-    <PackageVersion Include="Serilog.Enrichers.Thread" Version="3.1.0" />
-    <PackageVersion Include="Serilog.Extensions.Hosting" Version="4.2.0" />
-    <PackageVersion Include="Serilog.Settings.Configuration" Version="3.3.0" />
-    <PackageVersion Include="Serilog.Sinks.Console" Version="4.0.1" />
-    <PackageVersion Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageVersion Include="Serilog.Sinks.MSSqlServer" Version="5.6.1" />
-    <PackageVersion Include="Serilog.Sinks.Seq" Version="5.1.1" />
-    <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.1" />
-    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.3" />
-    <PackageVersion Include="Skoruba.IdentityServer4.Shared.Configuration" Version="2.1.0" />
   </ItemGroup>
 </Project>
