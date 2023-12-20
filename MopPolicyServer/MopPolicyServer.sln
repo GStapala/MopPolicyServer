@@ -37,21 +37,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IntegrationT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{73A31AD1-FA02-492B-A18F-2DF35F5D9E36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.STS.Identity", "src\SkorubaAdmin\SkorubaAdmin.STS.Identity\SkorubaAdmin.STS.Identity.csproj", "{63C1A103-885C-401D-B820-9A77C2D5E8C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin\SkorubaDuendeIdentityServer.Admin.csproj", "{C7659566-F662-4735-9AF4-E347B7BCE769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin", "src\SkorubaAdmin\SkorubaAdmin.Admin\SkorubaAdmin.Admin.csproj", "{D081DC2F-17DA-4824-BA83-EE2FFCE525FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin.Api", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin.Api\SkorubaDuendeIdentityServer.Admin.Api.csproj", "{5E907558-FB3D-4811-8F2D-0865D3CBC25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin.EntityFramework.Shared", "src\SkorubaAdmin\SkorubaAdmin.Admin.EntityFramework.Shared\SkorubaAdmin.Admin.EntityFramework.Shared.csproj", "{19ADD376-E0EE-4F4D-A893-14626A3335D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin.EntityFramework.MySql", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin.EntityFramework.MySql\SkorubaDuendeIdentityServer.Admin.EntityFramework.MySql.csproj", "{C7C3329A-2F29-4958-9E07-76723784968C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin.Api", "src\SkorubaAdmin\SkorubaAdmin.Admin.Api\SkorubaAdmin.Admin.Api.csproj", "{9D10AF76-0C97-4D0A-80DE-FC77372D5607}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin.EntityFramework.PostgreSQL", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin.EntityFramework.PostgreSQL\SkorubaDuendeIdentityServer.Admin.EntityFramework.PostgreSQL.csproj", "{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin.EntityFramework.MySql", "src\SkorubaAdmin\SkorubaAdmin.Admin.EntityFramework.MySql\SkorubaAdmin.Admin.EntityFramework.MySql.csproj", "{FD314FFA-49E6-458B-8AA5-D9117A626233}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin.EntityFramework.Shared", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin.EntityFramework.Shared\SkorubaDuendeIdentityServer.Admin.EntityFramework.Shared.csproj", "{E774F12A-5A4F-4247-B3DD-3836088482B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin.EntityFramework.PostgreSQL", "src\SkorubaAdmin\SkorubaAdmin.Admin.EntityFramework.PostgreSQL\SkorubaAdmin.Admin.EntityFramework.PostgreSQL.csproj", "{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Admin.EntityFramework.SqlServer", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Admin.EntityFramework.SqlServer\SkorubaDuendeIdentityServer.Admin.EntityFramework.SqlServer.csproj", "{5C551738-0AB9-4884-A154-A8D6C9FD87F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Admin.EntityFramework.SqlServer", "src\SkorubaAdmin\SkorubaAdmin.Admin.EntityFramework.SqlServer\SkorubaAdmin.Admin.EntityFramework.SqlServer.csproj", "{921459A5-94D0-4F3A-B3ED-4FCB30104B17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.Shared", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.Shared\SkorubaDuendeIdentityServer.Shared.csproj", "{782E4993-0105-4C8A-9155-E9FD67DE107A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaAdmin.Shared", "src\SkorubaAdmin\SkorubaAdmin.Shared\SkorubaAdmin.Shared.csproj", "{913714DD-9CC1-4355-89A2-C72D5AEAA2CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkorubaDuendeIdentityServer.STS.Identity", "src\SkorubaDuendeIdentityServer\src\SkorubaDuendeIdentityServer.STS.Identity\SkorubaDuendeIdentityServer.STS.Identity.csproj", "{DD1876F3-EE08-4AF9-BE92-78C62BF86588}"
 EndProject
 
 Global
@@ -96,38 +96,38 @@ Global
 		{01FA6786-921D-4CE8-8C50-4FDA66C9477D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01FA6786-921D-4CE8-8C50-4FDA66C9477D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01FA6786-921D-4CE8-8C50-4FDA66C9477D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63C1A103-885C-401D-B820-9A77C2D5E8C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63C1A103-885C-401D-B820-9A77C2D5E8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63C1A103-885C-401D-B820-9A77C2D5E8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63C1A103-885C-401D-B820-9A77C2D5E8C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D081DC2F-17DA-4824-BA83-EE2FFCE525FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D081DC2F-17DA-4824-BA83-EE2FFCE525FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D081DC2F-17DA-4824-BA83-EE2FFCE525FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D081DC2F-17DA-4824-BA83-EE2FFCE525FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19ADD376-E0EE-4F4D-A893-14626A3335D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19ADD376-E0EE-4F4D-A893-14626A3335D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19ADD376-E0EE-4F4D-A893-14626A3335D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19ADD376-E0EE-4F4D-A893-14626A3335D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D10AF76-0C97-4D0A-80DE-FC77372D5607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D10AF76-0C97-4D0A-80DE-FC77372D5607}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D10AF76-0C97-4D0A-80DE-FC77372D5607}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D10AF76-0C97-4D0A-80DE-FC77372D5607}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD314FFA-49E6-458B-8AA5-D9117A626233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD314FFA-49E6-458B-8AA5-D9117A626233}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD314FFA-49E6-458B-8AA5-D9117A626233}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD314FFA-49E6-458B-8AA5-D9117A626233}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{921459A5-94D0-4F3A-B3ED-4FCB30104B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{921459A5-94D0-4F3A-B3ED-4FCB30104B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{921459A5-94D0-4F3A-B3ED-4FCB30104B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{921459A5-94D0-4F3A-B3ED-4FCB30104B17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{913714DD-9CC1-4355-89A2-C72D5AEAA2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{913714DD-9CC1-4355-89A2-C72D5AEAA2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{913714DD-9CC1-4355-89A2-C72D5AEAA2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{913714DD-9CC1-4355-89A2-C72D5AEAA2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7659566-F662-4735-9AF4-E347B7BCE769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7659566-F662-4735-9AF4-E347B7BCE769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7659566-F662-4735-9AF4-E347B7BCE769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7659566-F662-4735-9AF4-E347B7BCE769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E907558-FB3D-4811-8F2D-0865D3CBC25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E907558-FB3D-4811-8F2D-0865D3CBC25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E907558-FB3D-4811-8F2D-0865D3CBC25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E907558-FB3D-4811-8F2D-0865D3CBC25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C3329A-2F29-4958-9E07-76723784968C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C3329A-2F29-4958-9E07-76723784968C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C3329A-2F29-4958-9E07-76723784968C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C3329A-2F29-4958-9E07-76723784968C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E774F12A-5A4F-4247-B3DD-3836088482B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E774F12A-5A4F-4247-B3DD-3836088482B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E774F12A-5A4F-4247-B3DD-3836088482B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E774F12A-5A4F-4247-B3DD-3836088482B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C551738-0AB9-4884-A154-A8D6C9FD87F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C551738-0AB9-4884-A154-A8D6C9FD87F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C551738-0AB9-4884-A154-A8D6C9FD87F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C551738-0AB9-4884-A154-A8D6C9FD87F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782E4993-0105-4C8A-9155-E9FD67DE107A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782E4993-0105-4C8A-9155-E9FD67DE107A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782E4993-0105-4C8A-9155-E9FD67DE107A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782E4993-0105-4C8A-9155-E9FD67DE107A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1876F3-EE08-4AF9-BE92-78C62BF86588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1876F3-EE08-4AF9-BE92-78C62BF86588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1876F3-EE08-4AF9-BE92-78C62BF86588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1876F3-EE08-4AF9-BE92-78C62BF86588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,14 +143,14 @@ Global
 		{EA6127A5-94C9-4C31-AD11-E6811B92B520} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{01FA6786-921D-4CE8-8C50-4FDA66C9477D} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{73A31AD1-FA02-492B-A18F-2DF35F5D9E36} = {6ED356A7-8B47-4613-AD01-C85CF28491BD}
-		{63C1A103-885C-401D-B820-9A77C2D5E8C1} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{D081DC2F-17DA-4824-BA83-EE2FFCE525FD} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{19ADD376-E0EE-4F4D-A893-14626A3335D4} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{9D10AF76-0C97-4D0A-80DE-FC77372D5607} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{FD314FFA-49E6-458B-8AA5-D9117A626233} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{31F5DC0B-58C6-4347-9C0D-3C4F89956C2F} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{921459A5-94D0-4F3A-B3ED-4FCB30104B17} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
-		{913714DD-9CC1-4355-89A2-C72D5AEAA2CB} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{C7659566-F662-4735-9AF4-E347B7BCE769} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{5E907558-FB3D-4811-8F2D-0865D3CBC25E} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{C7C3329A-2F29-4958-9E07-76723784968C} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{BE315C52-5ECD-4BF0-9449-7F9D2F45C6FE} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{E774F12A-5A4F-4247-B3DD-3836088482B1} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{5C551738-0AB9-4884-A154-A8D6C9FD87F5} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{782E4993-0105-4C8A-9155-E9FD67DE107A} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
+		{DD1876F3-EE08-4AF9-BE92-78C62BF86588} = {73A31AD1-FA02-492B-A18F-2DF35F5D9E36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CB609D9-5D54-4C11-A371-DAAC8B74E430}
