@@ -1,10 +1,13 @@
-﻿using MopPolicyServer.Application.TodoLists.Commands.CreateTodoList;
+﻿
+using Microsoft.AspNetCore.Authorization;
+using MopPolicyServer.Application.TodoLists.Commands.CreateTodoList;
 using MopPolicyServer.Application.TodoLists.Commands.DeleteTodoList;
 using MopPolicyServer.Application.TodoLists.Commands.UpdateTodoList;
 using MopPolicyServer.Application.TodoLists.Queries.GetTodos;
 
 namespace MopPolicyServer.Web.Endpoints;
 
+[Authorize]
 public class TodoLists : EndpointGroupBase
 {
     public override void Map(WebApplication app)

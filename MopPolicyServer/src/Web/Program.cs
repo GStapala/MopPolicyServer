@@ -1,4 +1,10 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using MopPolicyServer.Infrastructure.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +13,7 @@ builder.Services.AddKeyVaultIfConfigured(builder.Configuration);
 
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
-builder.Services.AddWebServices();
+builder.Services.AddWebServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -26,10 +32,21 @@ app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseSwaggerUi3(settings =>
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseSwagger(c => { });
+
+app.UseSwaggerUI(c =>
 {
-    settings.Path = "/api";
-    settings.DocumentPath = "/api/specification.json";
+    var policyServerConfiguration = (PolicyServerConfiguration)app.Services.GetService(typeof(PolicyServerConfiguration))!;
+    c.SwaggerEndpoint($"{policyServerConfiguration.ApiBaseUrl}/swagger/v1/swagger.json", policyServerConfiguration.ApiName);
+    c.OAuthClientId(policyServerConfiguration.OidcSwaggerUIClientId);
+    c.OAuthAppName(policyServerConfiguration.ApiName);
+    c.OAuthUsePkce();
+    
+    
+
 });
 
 app.MapControllerRoute(
@@ -47,4 +64,6 @@ app.MapEndpoints();
 
 app.Run();
 
-public partial class Program { }
+public partial class Program
+{
+}
