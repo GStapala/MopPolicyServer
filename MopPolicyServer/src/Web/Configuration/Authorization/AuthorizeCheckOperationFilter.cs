@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿// using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
+using MopPolicyServer.Application.Common.Security;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Microsoft.Extensions.DependencyInjection.Configuration.Authorization;
