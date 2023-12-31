@@ -3,6 +3,7 @@ using MopPolicyServer.Infrastructure.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MopPolicyServer.Infrastructure.Data.Contexts;
 using Respawn;
 
 namespace MopPolicyServer.Application.FunctionalTests;

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection.Configuration;
 using Microsoft.Extensions.DependencyInjection.Configuration.Authorization;
 using Microsoft.OpenApi.Models;
+using MopPolicyServer.Infrastructure.Data.Contexts;
 
 
 namespace Microsoft.Extensions.DependencyInjection;

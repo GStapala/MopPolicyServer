@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
+using MopPolicyServer.Infrastructure.Data.Contexts;
+using MopPolicyServer.Infrastructure.Data.Contexts.ContextInitializers;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -28,9 +30,17 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString);
         });
 
+        services.AddDbContext<PolicyServerDbContext>((sp, options) =>
+        {
+            options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
+
+            options.UseSqlServer(connectionString);
+        });
+
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
-        services.AddScoped<ApplicationDbContextInitialiser>();
+        services.AddScoped<ApplicationDbContextInitializer>();
+        services.AddScoped<PolicyServerDbContextInitializer>();
 
         services
             .AddDefaultIdentity<ApplicationUser>()

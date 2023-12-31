@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MopPolicyServer.Application.Common.Interfaces;
 using MopPolicyServer.Domain.Entities;
 using MopPolicyServer.Infrastructure.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 
-namespace MopPolicyServer.Infrastructure.Data;
+namespace MopPolicyServer.Infrastructure.Data.Contexts;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {

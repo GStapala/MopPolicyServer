@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MopPolicyServer.Infrastructure.Data;
+using MopPolicyServer.Infrastructure.Data.Contexts.ContextInitializers;
 
 
 var builder = WebApplication.CreateBuilder(args);

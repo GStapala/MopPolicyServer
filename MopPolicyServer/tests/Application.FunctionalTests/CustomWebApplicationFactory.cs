@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using MopPolicyServer.Infrastructure.Data.Contexts;
 
 namespace MopPolicyServer.Application.FunctionalTests;
 
