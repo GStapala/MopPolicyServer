@@ -8,7 +8,7 @@ public class PolicyServerDbContext : DbContext, IPolicyServerDbContext
 {
     private const string SchemaName = "pol";
 
-    // dotnet ef migrations add "InitialMigration" --project src\Infrastructure --startup-project src\Web --output-dir Data\Migrations --context PolicyServerDbContext
+    // dotnet ef migrations add "InitialPolicyServerMigration" --project src\Infrastructure --startup-project src\Web --output-dir Data\Migrations --context PolicyServerDbContext
     public PolicyServerDbContext(DbContextOptions<PolicyServerDbContext> options) : base(options)
     {
     }

@@ -1,8 +1,6 @@
 ﻿using Azure.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using MopPolicyServer.Application.Common.Interfaces;
-using MopPolicyServer.Infrastructure.Data;
 using MopPolicyServer.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection.Configuration;
@@ -69,20 +67,6 @@ public static class DependencyInjection
             });
             
             options.OperationFilter<AuthorizeCheckOperationFilter>();
-            // var securityRequirement = new OpenApiSecurityRequirement()
-            // {
-            //     {
-            //         new OpenApiSecurityScheme
-            //         {
-            //             Reference = new OpenApiReference
-            //                 // not "Bearer" here, as it was copied form VanillaProject
-            //                 { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
-            //         },
-            //         new string[] { }
-            //     }
-            // };
-            //
-            // options.AddSecurityRequirement(securityRequirement);
         });
         return services;
     }
