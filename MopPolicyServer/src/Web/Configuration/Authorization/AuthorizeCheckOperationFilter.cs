@@ -16,6 +16,5 @@ public class AuthorizeCheckOperationFilter(PolicyServerConfiguration policyServe
                 ] = new[] { policyServerConfiguration.OidcApiName }
             }
         };
-        // }
     }
 }
