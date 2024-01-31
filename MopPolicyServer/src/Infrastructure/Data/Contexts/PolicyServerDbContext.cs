@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MopPolicyServer.Application.Common.Interfaces;
 using MopPolicyServer.Domain.Entities;
-using MopPolicyServer.Infrastructure.Data.Interfaces;
 
 namespace MopPolicyServer.Infrastructure.Data.Contexts;
 
@@ -22,8 +22,6 @@ public class PolicyServerDbContext : DbContext, IPolicyServerDbContext
         ConfigurePolicyContext(builder);
         
         base.OnModelCreating(builder);
-
-        
     }
 
     private void ConfigurePolicyContext(ModelBuilder builder)

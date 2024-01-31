@@ -38,6 +38,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+        services.AddScoped<IPolicyServerDbContext>(provider => provider.GetRequiredService<PolicyServerDbContext>());
 
         services.AddScoped<ApplicationDbContextInitializer>();
         services.AddScoped<PolicyServerDbContextInitializer>();
