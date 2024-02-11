@@ -12,8 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TodoComponent } from './todo/todo.component';
+import { PolicyAdminComponent } from "./policy-admin/policy-admin.component";
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'todo', component: TodoComponent }
+      { path: 'todo', component: TodoComponent },
+      { path: 'policy-admin', component: PolicyAdminComponent }
     ]),
     BrowserAnimationsModule,
     ModalModule.forRoot()

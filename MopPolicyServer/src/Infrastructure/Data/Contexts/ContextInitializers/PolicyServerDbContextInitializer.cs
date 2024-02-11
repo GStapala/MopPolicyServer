@@ -3,26 +3,17 @@ using Microsoft.Extensions.Logging;
 
 namespace MopPolicyServer.Infrastructure.Data.Contexts.ContextInitializers;
 
-public class PolicyServerDbContextInitializer
+public class PolicyServerDbContextInitializer(ILogger<PolicyServerDbContextInitializer> logger, PolicyServerDbContext context)
 {
-    private readonly ILogger<PolicyServerDbContextInitializer> _logger;
-    private readonly PolicyServerDbContext _context;
-
-    public PolicyServerDbContextInitializer(ILogger<PolicyServerDbContextInitializer> logger, PolicyServerDbContext context)
-    {
-        _logger = logger;
-        _context = context;
-    }
-
     public async Task InitialiseAsync()
     {
         try
         {
-            await _context.Database.MigrateAsync();
+            await context.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while initialising the database.");
+            logger.LogError(ex, "An error occurred while initialising the database.");
             throw;
         }
     }
@@ -35,13 +26,13 @@ public class PolicyServerDbContextInitializer
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while seeding the database.");
+            logger.LogError(ex, "An error occurred while seeding the database.");
             throw;
         }
     }
 
     public async Task TrySeedAsync()
     {
-        
+        //TODO example seeding
     }
 }
