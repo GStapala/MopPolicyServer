@@ -15,6 +15,11 @@ import { TodoComponent } from './todo/todo.component';
 import { PolicyAdminComponent } from "./policy-admin/policy-admin.component";
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {OAuthModule} from "angular-oauth2-oidc";
+import {PoliciesComponent} from "./policy-admin/policies/policies.component";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -24,21 +29,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    TodoComponent
+    TodoComponent,
+    PolicyAdminComponent,
+    // PoliciesComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'todo', component: TodoComponent },
-      { path: 'policy-admin', component: PolicyAdminComponent }
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'counter', component: CounterComponent},
+      {path: 'fetch-data', component: FetchDataComponent},
+      {path: 'todo', component: TodoComponent},
+      {path: 'policy-admin', component: PolicyAdminComponent}
     ]),
     BrowserAnimationsModule,
-    ModalModule.forRoot()
+    OAuthModule.forRoot(),
+    ModalModule.forRoot(),
+    PoliciesComponent
+  ],
+  exports:[
+    // PoliciesComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
