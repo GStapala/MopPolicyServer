@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>DbContexts and Identity entities for the administration of the IdentityServer4 and Asp.Net Core Identity</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore"/>
+    <PackageReference Include="Skoruba.AuditLogging.EntityFramework"/>
+    <PackageReference Include="Skoruba.IdentityServer4.Admin.EntityFramework.Configuration"/>
+  </ItemGroup>
+</Project>
+
+
+
+
+
+
+
+

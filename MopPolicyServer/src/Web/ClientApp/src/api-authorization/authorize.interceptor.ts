@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import {OAuthModule, OAuthService} from "angular-oauth2-oidc";
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,18 @@ import { catchError, map } from 'rxjs/operators';
 export class AuthorizeInterceptor implements HttpInterceptor {
   loginUrl: string;
 
-  constructor(@Inject('BASE_URL') baseUrl: string) {
+  constructor( private oauthService: OAuthService, @Inject('BASE_URL') baseUrl: string ) {
     this.loginUrl = `${baseUrl}Identity/Account/Login`;
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    req = req.clone({
+      setHeaders: {
+        Authorization: 'Bearer ' +  this.oauthService.getAccessToken()
+      }
+    });
     return next.handle(req).pipe(
+
       catchError(error => {
         if (error instanceof HttpErrorResponse && error.url?.startsWith(this.loginUrl)) {
           window.location.href = `${this.loginUrl}?ReturnUrl=${window.location.pathname}`;

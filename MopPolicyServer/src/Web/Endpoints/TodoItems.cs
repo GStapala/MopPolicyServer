@@ -1,4 +1,5 @@
 ﻿using MopPolicyServer.Application.Common.Models;
+using MopPolicyServer.Application.Common.Security;
 using MopPolicyServer.Application.TodoItems.Commands.CreateTodoItem;
 using MopPolicyServer.Application.TodoItems.Commands.DeleteTodoItem;
 using MopPolicyServer.Application.TodoItems.Commands.UpdateTodoItem;
@@ -12,7 +13,6 @@ public class TodoItems : EndpointGroupBase
     public override void Map(WebApplication app)
     {
         app.MapGroup(this)
-            .RequireAuthorization()
             .MapGet(GetTodoItemsWithPagination)
             .MapPost(CreateTodoItem)
             .MapPut(UpdateTodoItem, "{id}")

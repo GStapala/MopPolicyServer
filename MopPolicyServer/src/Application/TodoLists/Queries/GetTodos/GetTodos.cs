@@ -5,7 +5,6 @@ using MopPolicyServer.Domain.Enums;
 
 namespace MopPolicyServer.Application.TodoLists.Queries.GetTodos;
 
-[Authorize]
 public record GetTodosQuery : IRequest<TodosVm>;
 
 public class GetTodosQueryHandler : IRequestHandler<GetTodosQuery, TodosVm>

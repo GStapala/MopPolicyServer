@@ -3,6 +3,7 @@
     <PropertyGroup>
         <RootNamespace>MopPolicyServer.Application</RootNamespace>
         <AssemblyName>MopPolicyServer.Application</AssemblyName>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>

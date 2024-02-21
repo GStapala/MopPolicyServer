@@ -3,6 +3,7 @@
     <PropertyGroup>
         <RootNamespace>MopPolicyServer.Web.AcceptanceTests</RootNamespace>
         <AssemblyName>MopPolicyServer.Web.AcceptanceTests</AssemblyName>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
