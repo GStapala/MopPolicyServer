@@ -26,7 +26,6 @@ public class PolicyServerDbContext : DbContext, IPolicyServerDbContext
 
     private void ConfigurePolicyContext(ModelBuilder builder)
     {
-        // many-to-many
         builder.Entity<PermissionSubject>(builder =>
         {
             builder.Metadata.SetSchema(SchemaName);
