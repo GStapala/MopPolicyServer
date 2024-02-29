@@ -20,6 +20,7 @@ import {PoliciesComponent} from "./policy-admin/policies/policies.component";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
+import {PolicyAdminModule} from "./policy-admin/policy-admin.module";
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import {MatTableModule} from "@angular/material/table";
     CounterComponent,
     FetchDataComponent,
     TodoComponent,
-    PolicyAdminComponent,
+    // PolicyAdminComponent,
     // PoliciesComponent
   ],
   imports: [
@@ -42,12 +43,13 @@ import {MatTableModule} from "@angular/material/table";
       {path: 'counter', component: CounterComponent},
       {path: 'fetch-data', component: FetchDataComponent},
       {path: 'todo', component: TodoComponent},
-      {path: 'policy-admin', component: PolicyAdminComponent}
+      // {path: 'policy-admin', component: PolicyAdminComponent}
     ]),
     BrowserAnimationsModule,
     OAuthModule.forRoot(),
     ModalModule.forRoot(),
-    PoliciesComponent
+    MatButtonModule, MatTableModule, MatSlideToggleModule,
+    PolicyAdminModule
   ],
   exports:[
     // PoliciesComponent

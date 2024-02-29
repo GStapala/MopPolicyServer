@@ -10,7 +10,7 @@ using MopPolicyServer.Infrastructure.Data.Contexts.ContextInitializers;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddKeyVaultIfConfigured(builder.Configuration);
+// builder.Services.AddKeyVaultIfConfigured(builder.Configuration);
 
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
