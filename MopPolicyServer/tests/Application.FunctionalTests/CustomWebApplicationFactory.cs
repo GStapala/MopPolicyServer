@@ -32,8 +32,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
                 .AddTransient(provider => Mock.Of<IUser>(s => s.Id == GetUserId()));
 
             services
-                .RemoveAll<DbContextOptions<ApplicationDbContext>>()
-                .AddDbContext<ApplicationDbContext>((sp, options) =>
+                .RemoveAll<DbContextOptions<PolicyServerDbContext>>()
+                .AddDbContext<PolicyServerDbContext>((sp, options) =>
                 {
                     options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
                     options.UseSqlServer(_connection);

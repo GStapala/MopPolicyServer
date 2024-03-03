@@ -30,11 +30,11 @@ public class TestcontainersTestDatabase : ITestDatabase
 
         _connection = new SqlConnection(_connectionString);
 
-        var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+        var options = new DbContextOptionsBuilder<PolicyServerDbContext>()
             .UseSqlServer(_connectionString)
             .Options;
 
-        var context = new ApplicationDbContext(options);
+        var context = new PolicyServerDbContext(options);
 
         context.Database.Migrate();
 

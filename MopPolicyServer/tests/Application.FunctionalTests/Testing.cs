@@ -1,11 +1,15 @@
-﻿using MopPolicyServer.Domain.Constants;
-using MopPolicyServer.Infrastructure.Data;
+﻿using System.Security.Claims;
+using System.Security.Principal;
+using MopPolicyServer.Domain.Constants;
 using MopPolicyServer.Infrastructure.Identity;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MopPolicyServer.Application.Common.Interfaces;
 using MopPolicyServer.Infrastructure.Data.Contexts;
+using MopPolicyServer.Web.Services;
 
 namespace MopPolicyServer.Application.FunctionalTests;
 
@@ -49,7 +53,21 @@ public partial class Testing
     {
         return _userId;
     }
+    
+    // TODO : find a cleaner way for setting up the user
+    public static async Task<string> GetUserFromExternalService()
+    {
+        _userId = "externalUserId";
 
+        var context = new HttpContextAccessor();
+        var gen = new GenericIdentity(_userId);
+        var contextUser = new ClaimsPrincipal(gen);
+        context.HttpContext = new DefaultHttpContext();
+        context.HttpContext.User = contextUser;        
+
+        return _userId;
+    }
+    
     public static async Task<string> RunAsDefaultUserAsync()
     {
         return await RunAsUserAsync("test@local", "Testing1234!", Array.Empty<string>());
@@ -112,7 +130,7 @@ public partial class Testing
     {
         using var scope = _scopeFactory.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var context = scope.ServiceProvider.GetRequiredService<PolicyServerDbContext>();
 
         return await context.FindAsync<TEntity>(keyValues);
     }
@@ -122,7 +140,7 @@ public partial class Testing
     {
         using var scope = _scopeFactory.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var context = scope.ServiceProvider.GetRequiredService<PolicyServerDbContext>();
 
         context.Add(entity);
 
@@ -133,7 +151,7 @@ public partial class Testing
     {
         using var scope = _scopeFactory.CreateScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var context = scope.ServiceProvider.GetRequiredService<PolicyServerDbContext>();
 
         return await context.Set<TEntity>().CountAsync();
     }
