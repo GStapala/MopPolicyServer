@@ -3,8 +3,6 @@
 # **Project is currently under development** 
 
 
-# Mop Policy Server
-
 The Mop Policy Server is a authorization and access control system designed to manage policies, roles, permissions, and users for various applications. This server acts as a central authority, providing information about user access rights to other connected applications.
 
 ## Features
