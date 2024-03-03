@@ -16,7 +16,7 @@ public class GetPoliciesWithPaginationQueryHandler(IPolicyServerDbContext contex
     public async Task<PaginatedList<PolicyDto>> Handle(GetPoliciesWithPaginationQuery request, CancellationToken cancellationToken)
     {
         return await context.Policies
-            .OrderBy(x => x.Name)
+            .OrderBy(x => x.Id)
             .ProjectTo<PolicyDto>(mapper.ConfigurationProvider)
             .PaginatedListAsync(request.PageNumber, request.PageSize);
     }

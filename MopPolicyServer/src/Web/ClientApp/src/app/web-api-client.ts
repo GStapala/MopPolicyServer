@@ -23,13 +23,13 @@ export interface ITodoItemsClient {
     updateTodoItemDetail(id: number, command: UpdateTodoItemDetailCommand): Observable<void>;
 }
 
-export interface IPolicyClient {
-    getPolicesWithPagination(listId: number, pageNumber: number, pageSize: number): Observable<PaginatedListOfTodoItemBriefDto>;
-    // createTodoItem(command: CreateTodoItemCommand): Observable<number>;
-    // updateTodoItem(id: number, command: UpdateTodoItemCommand): Observable<void>;
-    // deleteTodoItem(id: number): Observable<void>;
-    // updateTodoItemDetail(id: number, command: UpdateTodoItemDetailCommand): Observable<void>;
-}
+// export interface IPolicyClient {
+//     getPolicesWithPagination(listId: number, pageNumber: number, pageSize: number): Observable<PaginatedListOfTodoItemBriefDto>;
+//     // createTodoItem(command: CreateTodoItemCommand): Observable<number>;
+//     // updateTodoItem(id: number, command: UpdateTodoItemCommand): Observable<void>;
+//     // deleteTodoItem(id: number): Observable<void>;
+//     // updateTodoItemDetail(id: number, command: UpdateTodoItemDetailCommand): Observable<void>;
+// }
 
 @Injectable({
     providedIn: 'root'

@@ -10,7 +10,7 @@ import {filter} from "rxjs";
   selector: 'app-policy-admin-component',
   templateUrl: './policy-admin.component.html'
 })
-export class PolicyAdminComponent implements OnInit  {
+export class PolicyAdminComponent {
   policies: PolicyDto[];
 
   constructor(
@@ -18,25 +18,14 @@ export class PolicyAdminComponent implements OnInit  {
     private oauthService: OAuthService
   ) {
     this.oauthService.configure(authCodeFlowConfig);
-    this.oauthService.loadDiscoveryDocumentAndLogin();
-
-    // Automatically load user profile
-    this.oauthService.events
-      .pipe(filter((e) => e.type === 'token_received'))
-      .subscribe((_) => this.oauthService.loadUserProfile());
-  }
-
-  ngOnInit(): void {
-    this.policyClient.getPoliciesWithPagination().subscribe(
-      result => {
-        this.policies = result.items;
-        // this.priorityLevels = result.priorityLevels;
-        // if (this.policies.length) {
-        //   this.selectedList = this.policies[0];
-        // }
-      },
-      error => console.error(error)
-    );
+    if (oauthService.getAccessTokenExpiration() < new Date().getTime()) {
+      this.oauthService.loadDiscoveryDocumentAndLogin().then(() => {
+        // Automatically load user profile
+        this.oauthService.events
+          .pipe(filter((e) => e.type === 'token_received'))
+          .subscribe((_) => this.oauthService.loadUserProfile());
+      });
+    }
   }
 
   get userName(): string {

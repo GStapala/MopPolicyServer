@@ -8,11 +8,11 @@
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
 
-import {mergeMap as _observableMergeMap, catchError as _observableCatch} from 'rxjs/operators';
-import {Observable, throwError as _observableThrow, of as _observableOf} from 'rxjs';
-import {Injectable, Inject, Optional, InjectionToken} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpResponse, HttpResponseBase} from '@angular/common/http';
-import {PaginatedListOfTodoItemBriefDto, SwaggerException, WeatherForecast} from "./web-api-client";
+import { mergeMap as _observableMergeMap, catchError as _observableCatch } from 'rxjs/operators';
+import { Observable, throwError as _observableThrow, of as _observableOf } from 'rxjs';
+import { Injectable, Inject, Optional, InjectionToken } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angular/common/http';
+import { PaginatedListOfTodoItemBriefDto, SwaggerException, WeatherForecast } from "./web-api-client";
 
 export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 
@@ -45,7 +45,7 @@ export class PolicyClient implements IPolicyClient {
       url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
     url_ = url_.replace(/[?&]$/, "");
 
-    let options_ : any = {
+    let options_: any = {
       observe: "response",
       responseType: "blob",
       headers: new HttpHeaders({
@@ -53,32 +53,32 @@ export class PolicyClient implements IPolicyClient {
       })
     };
 
-    return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+    return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_: any) => {
       return this.processGetPoliciesWithPagination(response_);
     })).pipe(_observableCatch((response_: any) => {
       if (response_ instanceof HttpResponseBase) {
         try {
           return this.processGetPoliciesWithPagination(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<PaginatedListOfTodoItemBriefDto>;
+          return _observableThrow(e) as any as Observable<PaginatedListOfPolicyDto>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<PaginatedListOfTodoItemBriefDto>;
+        return _observableThrow(response_) as any as Observable<PaginatedListOfPolicyDto>;
     }));
   }
 
-  protected processGetPoliciesWithPagination(response: HttpResponseBase): Observable<PaginatedListOfTodoItemBriefDto> {
+  protected processGetPoliciesWithPagination(response: HttpResponseBase): Observable<PaginatedListOfPolicyDto> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
         (response as any).error instanceof Blob ? (response as any).error : undefined;
 
-    let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+    let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); } }
     if (status === 200) {
       return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
         let result200: any = null;
         let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-        result200 = PaginatedListOfTodoItemBriefDto.fromJS(resultData200);
+        result200 = PaginatedListOfPolicyDto.fromJS(resultData200);
         return _observableOf(result200);
       }));
     } else if (status !== 200 && status !== 204) {
@@ -92,12 +92,44 @@ export class PolicyClient implements IPolicyClient {
 }
 
 export class PaginatedListOfPolicyDto implements IPaginatedListOfPolicyDto {
-  items?: IPolicyDto[];
+  items?: PolicyDto[];
   pageNumber?: number;
   totalPages?: number;
   totalCount?: number;
   hasPreviousPage?: boolean;
   hasNextPage?: boolean;
+
+  constructor(data?: IPaginatedListOfPolicyDto) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      if (Array.isArray(_data["items"])) {
+        this.items = [] as any;
+        for (let item of _data["items"])
+          this.items!.push(PolicyDto.fromJS(item));
+      }
+      this.pageNumber = _data["pageNumber"];
+      this.totalPages = _data["totalPages"];
+      this.totalCount = _data["totalCount"];
+      this.hasPreviousPage = _data["hasPreviousPage"];
+      this.hasNextPage = _data["hasNextPage"];
+    }
+  }
+
+  static fromJS(data: any): PaginatedListOfPolicyDto {
+    data = typeof data === 'object' ? data : {};
+    let result = new PaginatedListOfPolicyDto();
+    result.init(data);
+    return result;
+  }
+
 }
 
 export interface IPaginatedListOfPolicyDto {
@@ -111,16 +143,42 @@ export interface IPaginatedListOfPolicyDto {
 
 export interface IPolicyDto {
   id?: number;
-  Name?: string;
-  Description?: string | undefined;
+  name?: string;
+  description?: string;
+  created?: Date;
 }
 
 export class PolicyDto implements IPolicyDto {
   id?: number;
-  Name?: string;
-  Description?: string | undefined;
-}
+  name?: string;
+  description?: string;
+  created?: Date;
 
+  constructor(data?: IPolicyDto) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      this.id = _data["id"];
+      this.name = _data["name"];
+      this.description = _data["description"];
+      this.created = _data["created"];
+    }
+  }
+
+  static fromJS(data: any): PolicyDto {
+    data = typeof data === 'object' ? data : {};
+    let result = new PolicyDto();
+    result.init(data);
+    return result;
+  }
+}
 
 function throwException(message: string, status: number, response: string, headers: { [key: string]: any; }, result?: any): Observable<any> {
   if (result !== null && result !== undefined)
